@@ -8,7 +8,7 @@ include.exports = {
 		if (mask == null || mask.Compo == null) 
 			return;
 		
-		if (window.__atmaDebugger) 
+		if (window['__atmaDebugger']) 
 			return;
 		
 		
@@ -29,7 +29,7 @@ include.exports = {
 			// import hover-highlight.js
 			// import compo-listener.js
 			
-			window.__atmaDebugger = {
+			window['__atmaDebugger'] = {
 				getComponents: function(){
 					
 					var rootCompos = compo_getRoots(),
@@ -159,7 +159,7 @@ include.exports = {
 	
 	utils: function(){
 		
-		if (window.__atmaDebuggerUtil) 
+		if (window['__atmaDebuggerUtil']) 
 			return;
 		
 		function util_send(eventName, args){
@@ -172,7 +172,7 @@ include.exports = {
 			document.dispatchEvent(event);
 		};
 		
-		window.__atmaDebuggerUtil = {
+		window['__atmaDebuggerUtil'] = {
 			
 			send: util_send,
 			

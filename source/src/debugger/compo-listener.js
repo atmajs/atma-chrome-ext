@@ -1,6 +1,6 @@
 var CompoListener = (function(){
 	
-	mask.on('compoCreated', listener_Created);
+	Mask.on('compoCreated', listener_Created);
 	
 	function listener_Created(compo){
 		setTimeout(function(){
@@ -38,7 +38,7 @@ var CompoListener = (function(){
 		
 		_attachedDisposer[compo.ID] = true;
 		
-		mask.Compo.attachDisposer(compo, function(){
+		Mask.Compo.attachDisposer(compo, function(){
 			listener_Disposed(this);
 		});
 	}

@@ -1,6 +1,6 @@
 {
 	"name": "Atma.js DevTool",
-	"version": "0.1",
+	"version": "0.1.2",
 	"description": "Development Tool to develop, inspect and debug Atma.js Components",
 	"devtools_page": "devtools.html",
 	"manifest_version": 2,

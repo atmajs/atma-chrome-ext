@@ -14,7 +14,7 @@ module.exports = {
 		uglify: {},
 		
 		defines: {
-			DEBUG: false
+			DEBUG: true
 		}
 	},
 

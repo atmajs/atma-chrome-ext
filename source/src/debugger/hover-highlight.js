@@ -122,14 +122,11 @@ var Highlighter = (function(){
 			}
 			
 			var els = compo_getElements(compo);
-			if (els == null) {
-				console.warn('<highlight> has no elements', compo);
+			if (els == null) 
 				return;
-			}
 			
-			if (els.length === 0) {
+			if (els.length === 0) 
 				return;
-			}
 			
 			var sizes = [],
 				info,

@@ -8,7 +8,7 @@ include.exports = {
 		if (mask == null || mask.Compo == null) 
 			return;
 		
-		if (window.__atmaDebugger) 
+		if (window['__atmaDebugger']) 
 			return;
 		
 		
@@ -624,14 +624,11 @@ include.exports = {
 						}
 						
 						var els = compo_getElements(compo);
-						if (els == null) {
-							console.warn('<highlight> has no elements', compo);
+						if (els == null) 
 							return;
-						}
 						
-						if (els.length === 0) {
+						if (els.length === 0) 
 							return;
-						}
 						
 						var sizes = [],
 							info,
@@ -670,7 +667,7 @@ include.exports = {
 			// source compo-listener.js
 			var CompoListener = (function(){
 				
-				mask.on('compoCreated', listener_Created);
+				Mask.on('compoCreated', listener_Created);
 				
 				function listener_Created(compo){
 					setTimeout(function(){
@@ -708,7 +705,7 @@ include.exports = {
 					
 					_attachedDisposer[compo.ID] = true;
 					
-					mask.Compo.attachDisposer(compo, function(){
+					Mask.Compo.attachDisposer(compo, function(){
 						listener_Disposed(this);
 					});
 				}
@@ -813,7 +810,7 @@ include.exports = {
 			}());
 			// end:source compo-listener.js
 			
-			window.__atmaDebugger = {
+			window['__atmaDebugger'] = {
 				getComponents: function(){
 					
 					var rootCompos = compo_getRoots(),
@@ -943,7 +940,7 @@ include.exports = {
 	
 	utils: function(){
 		
-		if (window.__atmaDebuggerUtil) 
+		if (window['__atmaDebuggerUtil']) 
 			return;
 		
 		function util_send(eventName, args){
@@ -956,7 +953,7 @@ include.exports = {
 			document.dispatchEvent(event);
 		};
 		
-		window.__atmaDebuggerUtil = {
+		window['__atmaDebuggerUtil'] = {
 			
 			send: util_send,
 			
