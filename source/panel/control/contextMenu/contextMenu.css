@@ -1,0 +1,54 @@
+
+.-ctx-menu {
+	display: none;
+	position:absolute;
+	
+	z-index: 999999;
+	
+	background: white;
+	
+	border: 1px solid #aaa;
+	box-sizing: border-box;
+	box-shadow: 2px 2px 2px 0px #777;
+	
+	padding: 7px 0px;
+	margin: 0px;
+	font-family: serif;
+	font-size: 14px;
+}
+
+.-ctx-menu > menuitem {
+	padding: 7px 25px;
+	cursor: pointer;
+	position: relative;
+	display: block;
+}
+
+.-ctx-menu > menuitem:hover {
+	background: #4281F4;
+	color: white;
+}
+.-ctx-menu > menuitem:hover:after {
+	content: ' ';
+	width: 1px;
+	position: absolute;
+	right: -1px;
+	top: 0px;
+	bottom: 0px;
+	background: #4281F4;
+}
+.-ctx-menu > menuitem:hover:before {
+	content: ' ';
+	width: 1px;
+	position: absolute;
+	left: -1px;
+	top: 0px;
+	bottom: 0px;
+	background: #4281F4;
+}
+
+.-ctx-menu > menuitem.disabled {
+	opacity: .5;
+	pointer-events: none;
+}
+

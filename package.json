@@ -1,0 +1,14 @@
+{
+  "name": "-",
+  "description": "Atma.js DevTool Extension",
+  "version": "0.0.1",
+  "contributors": [],
+  "author": "Alexander Kit <alex.kit@atmajs.com>",
+  "devDependencies": {
+    "adm-zip": ">0.0.0"
+  },
+  
+  "engines": {
+    "node": ">0.8.9"
+  }
+}

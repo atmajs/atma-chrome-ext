@@ -1,0 +1,43 @@
+
+:template #compo-element {
+	li.~[: _components.length ? 'parent' ].expanded data-id='~[_ID]' {
+		.selection style='height: 14px;';
+		
+		//span.el-toggle > ' a ';
+		
+		span.highlight {
+			span.webkit-html-tag {
+				span.webkit-html-tag-name {
+					'~[_compoName] '
+					
+					% if='!_compoName' {
+						em > '<unnamed component> '
+					}
+				}
+				
+				
+				% each='_attr' {
+					span.webkit-html-attribute {
+						span.webkit-html-attribute-name > ' ~[key]'
+						
+						'="' span.webkit-html-attribute-value > '~[value]'
+						'" '
+					}
+				}
+			}
+		}
+	}
+	
+	% if='_components.length' >
+		ol.children.expanded >
+			% each='_components' >
+				:import #compo-element;
+	
+}
+
+ol.elements-tree-outline tabindex='0' #compos-container {
+					  
+	% each='_components' >
+		:import #compo-element;
+}
+:contextMenu;

@@ -1,0 +1,45 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<link rel='stylesheet' href='panel/style/inspector.css' />
+</head>
+<body class='undocked platform-windows platform-windows-vista port-undefined inactive'>
+	
+	<script type='mask/template' id='layout'>
+	
+	
+	#root > .main > .fill > .panel.visible.elements >
+	
+		:splitView {
+			
+			@left
+				.outline-disclosure
+				.source-code
+				.nowrap {
+				
+					:elementsView;
+			}
+			
+			@right {
+				
+				:sideBar;
+			}
+		}
+	
+	</script>
+	
+	
+	
+	<script type='mask/template' id='layout-no-atma'>
+		h4 > 'No Atma.js'
+	</script>
+	
+	<script type='mask/template' id='layout-page-loading'>
+		h4 > 'Page is loading ...'
+	</script>
+
+	<script src="vendor/jquery.js"></script>
+	<script src="vendor/globals.js"></script>
+	<script src="panel/script/main.js"></script>
+</body>
+</html>

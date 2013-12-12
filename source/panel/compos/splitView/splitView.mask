@@ -1,0 +1,20 @@
+
+
+	
+	@left
+		.split-view-contents
+		.scroll-target
+		.split-view-contents-first
+		;
+	
+	
+	@right
+		style='right: 0px'
+		
+		.split-view-contents
+		.scroll-target
+		.split-view-contents-second
+		.split-view-sidebar
+		;
+	
+	.split-view-resizer style='margin-right: -2.5px;';

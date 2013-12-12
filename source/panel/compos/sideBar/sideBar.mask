@@ -1,0 +1,8 @@
+
+.sidebar-pane.visible >
+	.body {
+		
+		:bindingsView;
+		:compoView;
+		:resourceView;
+	}

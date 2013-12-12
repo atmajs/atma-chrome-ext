@@ -1,0 +1,54 @@
+
+:template #properties {
+	% if='properties.length' >
+		ol.children {
+			% each='properties' >
+				:import #property-node;
+		}
+}
+
+:template #property-node {
+	
+	// .expanded
+	li
+		.~[: properties.length || hasChildren ? 'parent' ]
+		.~[: isDimmed ? 'dimmed'] data-name='~[name]' {
+		
+		span.name > '~[name]'
+		span.seperator > ': '
+		
+		// type 'array'|'node'|'number'|'string'|'boolean'|'undefined'
+		span.value.console-formatted-~[type] {
+			% if='type=="link"' >
+				a.webkit-html-resource-link href='~[value]' target='_blank' title='~[value]'>
+					'~[value]'
+			% else >
+				'~[value]'
+		}
+	}
+	
+	:import #properties;
+}
+
+.section.expanded {
+	
+	.header.monospace {
+		
+		.title > '~[title]'
+	}
+	
+	
+	
+	ol.properties.properties-tree.monospace {
+		
+		%% each='objects' {
+			% if='properties.length' >
+				% each='properties' >
+					:import #property-node;
+			% else >
+				li >
+					.info >
+						'No Properties'
+		}
+	}
+}

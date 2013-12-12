@@ -1,0 +1,158 @@
+<!DOCTYPE HTML><html>
+<head>
+	
+<link rel="stylesheet" href="style.css" /></head>
+<body class="undocked platform-windows platform-windows-vista port-undefined inactive">
+	
+	<script type="mask/template" id="layout">
+	
+	
+	#root > .main > .fill > .panel.visible.elements >
+	
+		:splitView {
+			
+			@left
+				.outline-disclosure
+				.source-code
+				.nowrap {
+				
+					:elementsView;
+			}
+			
+			@right {
+				
+				:sideBar;
+			}
+		}
+	
+	</script>
+	
+	
+	
+	<script type="mask/template" id="layout-no-atma">
+		h4 > 'No Atma.js'
+	</script>
+	
+	<script type="mask/template" id="layout-page-loading">
+		h4 > 'Page is loading ...'
+	</script>
+
+	
+	
+	
+<div id="build.release.xhr" style="display: none;" hidden="hidden"><script type="include/load" id="includejs-panelcompossplitViewsplitViewmask" data-appuri="/panel/compos/splitView/splitView.mask"> 
+
+	
+	@left
+		.split-view-contents
+		.scroll-target
+		.split-view-contents-first
+		;
+	
+	
+	@right
+		style='right: 0px'
+		
+		.split-view-contents
+		.scroll-target
+		.split-view-contents-second
+		.split-view-sidebar
+		;
+	
+	.split-view-resizer style='margin-right: -2.5px;';
+ </script>
+<script type="include/load" id="includejs-panelcomposelementsViewelementsViewmask" data-appuri="/panel/compos/elementsView/elementsView.mask"> 
+:template #compo-element {
+	li.~[: _components.length ? 'parent' ].expanded data-id='~[_ID]' {
+		.selection style='height: 14px;';
+		
+		//span.el-toggle > ' a ';
+		
+		span.highlight {
+			span.webkit-html-tag {
+				span.webkit-html-tag-name {
+					'~[_compoName] '
+					
+					% if='!_compoName' {
+						em > '<unnamed component> '
+					}
+				}
+				
+				
+				% each='_attr' {
+					span.webkit-html-attribute {
+						span.webkit-html-attribute-name > ' ~[key]'
+						
+						'="' span.webkit-html-attribute-value > '~[value]'
+						'" '
+					}
+				}
+			}
+		}
+	}
+	
+	% if='_components.length' >
+		ol.children.expanded >
+			% each='_components' >
+				:import #compo-element;
+	
+}
+
+ol.elements-tree-outline tabindex='0' {
+					  
+	% each='_components' >
+		:import #compo-element;
+		
+	:contextMenu;
+} </script>
+<script type="include/load" id="includejs-panelcompossideBarsideBarmask" data-appuri="/panel/compos/sideBar/sideBar.mask"> 
+.-sideBar {
+	
+	:bindingsView;
+	
+}
+ </script>
+<script type="include/load" id="includejs-panelcontrolobjectInspectorobjectInspectormask" data-appuri="/panel/control/objectInspector/objectInspector.mask"> 
+
+:template #properties {
+	
+	// .expanded
+	li.~[properties.length ? 'parent'] {
+		span.name > '~[name]'
+		span.seperator > ': '
+		
+		// type 'array'|'node'|'number'|'string'|'boolean'
+		span.value.console-formatted-~[type] > '~[value]'
+	}
+	
+	
+	% if='properties.length' >
+		ol.children {
+			% each='properties' >
+				:import #properties;
+		}
+	
+}
+
+.section.expanded {
+	
+	.header.monospace {
+		
+		.title > '~[title]'
+	}
+	
+	
+	
+	ol.properties.properties-tree.monospace {
+		
+		%% each='objects' >
+			% if='properties.length' >
+				% each='properties' >
+					:import #properties;
+	}
+}
+ </script>
+<script type="include/load" id="includejs-panelcompossideBarbindingsViewbindingsViewmask" data-appuri="/panel/compos/sideBar/bindingsView/bindingsView.mask"> 
+
+:objectInspector; </script></div><script type="text/javascript" src="script.js"></script></body>
+</html>
